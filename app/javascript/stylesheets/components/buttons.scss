@@ -1,0 +1,12 @@
+.button{
+    @apply  text-white font-bold py-2 px-4 rounded;
+
+    @screen dark{
+        @apply bg-dark-secondary;
+    }
+   
+    @screen light{
+        @apply bg-light-secondary;
+    }
+
+}

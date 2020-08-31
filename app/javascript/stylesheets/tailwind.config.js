@@ -22,9 +22,19 @@ module.exports = {
       current: 'currentColor',
 
       black: '#000',
-      white: '#fff',
+      white: '#f3f3f3',
 
-      primary: '#1a202c',
+      dark:{
+        primary: '#56E39F',
+        inputtext: '#333333',
+        secondary: '#25283D',
+      },
+
+      light:{
+        primary: '#56E39F',
+        inputtext: '#56E39F',
+        secondary: '#F5F5F4'
+      },
 
       gray: {
         100: '#f7fafc',
@@ -138,7 +148,11 @@ module.exports = {
       },
     },
     spacing: {
-      px: '1px',
+      px: {
+        1:'1px',
+        64:'64px',
+        128:'128px'
+      },
       '0': '0',
       '1': '0.25rem',
       '2': '0.5rem',
@@ -157,6 +171,8 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
+      '128': '128px',
+      '256': '256px',
     },
     backgroundColor: theme => theme('colors'),
     backgroundImage: {
@@ -357,6 +373,8 @@ module.exports = {
     }),
     minHeight: {
       '0': '0',
+      '50': '50%',
+      '98': '98%',
       full: '100%',
       screen: '100vh',
     },
@@ -778,18 +796,5 @@ module.exports = {
     animation: ['responsive'],
   },
   corePlugins: {},
-  plugins: [function({ addBase, config }) {
-    addBase({
-      body: {
-        color: config("theme.colors.black"),
-        backgroundColor: config("theme.colors.white")
-      },
-      "@screen dark": {
-        body: {
-          color: config("theme.colors.white"),
-          backgroundColor: config("theme.colors.black")
-        }
-      }
-    });
-  }],
+  plugins: [],
 }
