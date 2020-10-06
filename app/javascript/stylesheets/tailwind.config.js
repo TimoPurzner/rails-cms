@@ -22,18 +22,24 @@ module.exports = {
       current: 'currentColor',
 
       black: '#000',
-      white: '#f3f3f3',
+      white: '#ffffff',
 
       dark:{
         primary: '#56E39F',
         inputtext: '#333333',
         secondary: '#25283D',
+        fill: '#fffcff',
+        alarm: '#d77a61',
+        info: '#f5f5f4'
       },
 
       light:{
         primary: '#56E39F',
         inputtext: '#56E39F',
-        secondary: '#F5F5F4'
+        secondary: '#F5F5F4',
+        fill: '#56E39F',
+        alarm: '#d77a61',
+        info: 'f5f5f4'
       },
 
       gray: {
@@ -666,6 +672,7 @@ module.exports = {
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
+      pushNotification: 'flyInFromTop 2s linear 0s alternate, flyOutFromTop 2s linear 5s alternate;',
     },
     keyframes: {
       spin: {
@@ -687,6 +694,22 @@ module.exports = {
           animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
         },
       },
+      flyInFromTop: {
+        '0%': {
+          transform:' translateY(-100%)',
+        },
+        '100%': {
+          transform: 'translateY(0%)'
+        }
+      },
+      flyOutFromTop: {
+        '100%': {
+          transform: 'translateY(-100%)'
+        },
+        '0%': {
+          transform:'translateY(0%)'
+        }
+      }
     },
   },
   variants: {
@@ -714,7 +737,7 @@ module.exports = {
     boxSizing: ['responsive'],
     container: ['responsive'],
     cursor: ['responsive'],
-    display: ['responsive'],
+    display: ['responsive','group-hover'],
     divideColor: ['responsive'],
     divideOpacity: ['responsive'],
     divideStyle: ['responsive'],

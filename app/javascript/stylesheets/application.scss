@@ -7,3 +7,9 @@
 
 
 @import "tailwindcss/utilities";
+
+@layer utilities {
+    .animation-forwards {
+        animation-fill-mode: forwards;
+  }
+}

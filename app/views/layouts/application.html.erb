@@ -12,10 +12,12 @@
 
   <body class="bg-dark-secondary light:bg-light-secondary">
   <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
+    <div class="alert alert-success absolute top-0 w-full h-12 text-dark-primary animate-pushNotification bg-dark-info">
+      <%= notice %>
+    </div>
   <% end %>
   <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
+    <div class="alert alert-danger"><%= alert %></div>
   <% end %>
     <%= yield %>
   </body>

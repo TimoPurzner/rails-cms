@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsCms</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header class="bg-dark-primary light:bg-light-primary">
+      <div class="flex justify-between p-2">
+        <div><!-- Logo?! --></div>
+        <div class="font-bold">
+          Rails cms
+        </div>
+        <div class="">
+          <%= link_to(current_user.show_name, destroy_user_session_path, method: :delete) %>
+        </div>
+      </div>
+  </header>
+
+  <body class="bg-dark-secondary light:bg-light-secondary">
+  <% if notice %>
+    <div class="animation-forwards animate-pushNotification absolute top-0 w-full h-16 
+              text-dark-inputtext flex justify-center items-center font-bold bg-dark-info">
+      <span>
+        <%= notice %>
+      </span>
+    </div>
+  <% end %>
+  <% if alert %>
+    <div class="animation-forwards animate-pushNotification absolute top-0 w-full h-16 
+              text-white flex justify-center items-center font-bold bg-dark-alarm"><%= alert %></div>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>
