@@ -384,10 +384,13 @@ module.exports = {
       full: '100%',
       screen: '100vh',
     },
-    minWidth: {
+    minWidth: theme => ({
       '0': '0',
+      '25p': '25%',
+      '20p': '20%',
+      ...theme('spacing'),
       full: '100%',
-    },
+    }),
     objectPosition: {
       bottom: 'bottom',
       center: 'center',
@@ -672,7 +675,7 @@ module.exports = {
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
-      pushNotification: 'flyInFromTop 2s linear 0s alternate, flyOutFromTop 2s linear 5s alternate;',
+      pushNotification: 'flyInFromTop 1s linear 0s alternate, flyOutFromTop 1s linear 5s alternate;',
     },
     keyframes: {
       spin: {

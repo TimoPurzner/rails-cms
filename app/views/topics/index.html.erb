@@ -1,21 +1,26 @@
-<h1 class="text-6xl text-white">Topics</h1>
+<h1 class="text-4xl text-white light:text-black">Topics</h1>
 
+<%= link_to 'Neues Topic erstellen', new_topic_path, class: "button text-2xl" %>
 
-
-<%= link_to 'New Topic', new_topic_path, class: "button text-4xl" %>
-
+<div class="flex flex-col sm:flex-row">
     <% @topics.each do |topic| %>
+        <%= link_to topic, class: "" do %>
+            <div class="flex flex-col m-4 p-5 min-w-25p  rounded-lg bg-dark-fill">
+            
+                <h4 class="text-2xl mb-0 font-bold text-dark-secondary"> <%= topic.title%> </h4>
+                <h4 class="text-xl text-gray-700"> Markdown </h4>
 
-        <div class="max-w-screen-sm w-full lg:max-w-full lg:flex">
-          
-        </div>
-
-        <%= link_to 'Show', topic %>
-        <%= link_to 'Edit', edit_topic_path(topic) %>
-        <%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Es werden alle erstellten Einträge gelöscht. Sind Sie sicher?' } %>
-      
+                <div class="mt-8 self-end">
+                    <object>
+                        <%= link_to edit_topic_path(topic) do %>
+                            <i class="fas fa-edit text-2xl mr-4"></i>
+                        <% end %>
+                        <%= link_to topic, method: :delete, data: { confirm: 'Es werden alle erstellten Einträge gelöscht. Sind Sie sicher?' } do %>
+                            <i class="fas fa-trash text-2xl"></i>
+                        <% end %>
+                    </object>
+                </div>
+            </div>
+        <% end %>
     <% end %>
-
-<br>
-
-
+</div>

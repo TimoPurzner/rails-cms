@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsCms</title>
+    <title>Rails CMS</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Content Mangament System, Markdown, Text, Images">
+    <meta name="description" content="Content Managment System">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,12 +15,16 @@
 
   <body class="bg-dark-secondary light:bg-light-secondary">
   <% if notice %>
-    <div class="alert alert-success absolute top-0 w-full h-12 text-dark-primary animate-pushNotification bg-dark-info">
-      <%= notice %>
+    <div class="animation-forwards animate-pushNotification absolute top-0 w-full h-16 
+              text-dark-inputtext flex justify-center items-center font-bold bg-dark-info">
+      <span><%= notice %></span>
     </div>
   <% end %>
   <% if alert %>
-    <div class="alert alert-danger"><%= alert %></div>
+    <div class="animation-forwards animate-pushNotification absolute top-0 w-full h-16 
+              text-white flex justify-center items-center font-bold bg-dark-alarm">
+      <span><%= alert %>
+    </div>
   <% end %>
     <%= yield %>
   </body>
