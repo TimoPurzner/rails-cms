@@ -234,7 +234,8 @@ module.exports = {
       xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
       sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
       default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-      md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+      mdLight: '0 4px 6px 1px rgba(0, 0, 0, 0.1), 0 2px 4px 1px rgba(0, 0, 0, 0.06)',
+      md: '0 4px 6px 3px rgba(255, 255, 256, 0.1), 0 2px 4px 3px rgba(255, 255, 255, 0.06)',
       lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
       xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
@@ -603,6 +604,7 @@ module.exports = {
       '90': '.9',
       '95': '.95',
       '100': '1',
+      '103': '1.03',
       '105': '1.05',
       '110': '1.1',
       '125': '1.25',
@@ -675,6 +677,7 @@ module.exports = {
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
+      card: 'card 1s linear',
       pushNotification: 'flyInFromTop 1s linear 0s alternate, flyOutFromTop 1s linear 5s alternate;',
     },
     keyframes: {
@@ -683,6 +686,9 @@ module.exports = {
       },
       ping: {
         '75%, 100%': { transform: 'scale(2)', opacity: '0' },
+      },
+      card: {
+        '75%, 100%': { transform: 'scale(1.2)' },
       },
       pulse: {
         '50%': { opacity: '.5' },
