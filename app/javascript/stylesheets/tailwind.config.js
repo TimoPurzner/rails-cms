@@ -678,7 +678,7 @@ module.exports = {
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
       card: 'card 1s linear',
-      pushNotification: 'flyInFromTop 1s linear 0s alternate, flyOutFromTop 1s linear 5s alternate;',
+      pushNotification: 'flyInFromTop 0.8s linear 0s alternate, flyOutFromTop 0.8s linear 5s alternate;',
     },
     keyframes: {
       spin: {
