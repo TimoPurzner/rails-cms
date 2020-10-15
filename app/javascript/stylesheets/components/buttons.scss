@@ -1,9 +1,5 @@
 .button{
-    @apply  text-white font-bold py-2 px-4 rounded;
-
-    @screen dark{
-        @apply bg-dark-secondary;
-    }
+    @apply  text-white bg-dark-primary font-bold py-2 px-4 rounded;
    
     @screen light{
         @apply bg-light-secondary;

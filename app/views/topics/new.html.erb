@@ -1,5 +1,7 @@
-<h1>New Topic</h1>
+<h1 class="text-4xl text-white light:text-black">Neues Topic erstellen</h1>
 
-<%= render 'form', topic: @topic %>
 
-<%= link_to 'Back', topics_path %>
+<%= render 'form', topic: @topic do %>
+    Erstellen
+<% end %>
+
