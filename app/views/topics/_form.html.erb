@@ -1,17 +1,20 @@
 <%= form_with(model: topic, local: true) do |form| %>
   <% if topic.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+      <h2 class="text-white"><%= topic.errors.count %> Fehler Verhindert das Speichern.</h2>
 
       <ul>
         <% topic.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li class="text-white"><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+  <%= form.text_field :title, class: "mt-8 text-input xl:max-w-3xl", placeholder: "Name des Topics" %>
+
+  <div class="mt-8 flex flex-col-reverse xl:flex-row justify-between">
+    <%= link_to 'Abbrechen', :back, class: "button bg-dark-alarm w-full text-center xl:max-w-md" %>
+    <%= form.submit yield, class: "button w-full xl:max-w-md" %>
   </div>
 <% end %>
